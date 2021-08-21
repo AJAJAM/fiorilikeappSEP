@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","tcs/hr/hire/util/formatter"],function(e,r){"use strict";return e.extend("tcs.hr.hire.controller.BaseController",{formatter:r,onInit:function(){console.log("Dude i am in Base Controller --\x3e Base.controller.js")}})});

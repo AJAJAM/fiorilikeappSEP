@@ -1,0 +1,6 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="tcs.hr.hire.controller.Empty"
+xmlns="sap.m">
+    <Page title="Initial View">
+        <Image src="https://sm.mashable.com/t/mashable_in/photo/default/8-years-of-the-avengers-how-joss-whedons-risk-became-crucial_38p5.h960.jpg" />
+    </Page>
+</mvc:View>

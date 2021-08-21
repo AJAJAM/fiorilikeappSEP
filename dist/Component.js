@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/UIComponent"],function(t){"use strict";return t.extend("tcs.hr.hire.Component",{metadata:{manifest:"json"},init:function(){t.prototype.init.apply(this);var i=this.getRouter();i.initialize()},destroy:function(){}})});

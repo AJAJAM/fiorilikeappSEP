@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:f="sap.ui.layout.form" 
+                          xmlns:core="sap.ui.core" xmlns="sap.m">
+    <VBox>
+        <items>
+            <Image id="idImage" width="400px" height="400px"/>
+            <f:SimpleForm>
+                <Label text="Name" />
+                <Text text="{NAME}" />
+                <Label text="Description" />
+                <Text text="{DESCRIPTION}" />
+                <Label text="Price" />
+                <Text text="{PRICE} {CURRENCY_CODE}" />
+                <Label text="Unit" />
+                <Text text="{DIM_UNIT}" />
+            </f:SimpleForm>
+        </items>
+    </VBox>
+</core:FragmentDefinition>

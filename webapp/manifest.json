@@ -1,0 +1,110 @@
+{
+    "_version": "1.19.0",
+    "sap.app": {
+        "id": "tcs.hr.hire",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "description": "{{appDescription}}",
+        "title": "{{appTitle}}",
+        "i18n": "i18n/i18n.properties",
+        "tags": {"keywords": ["product", "anubhav"]},
+        "dataSources":{
+            "anubhavService":{
+                "uri": "/sap/opu/odata/sap/ZJULY_2021_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {"desktop": true,"phone": true,"tablet": true},
+        "supportedThemes": ["sap_fiori_3","sap_belize","sap_fiori_3_dark"]
+    },
+    "sap.ui5":{
+        "dependencies": {
+            "minUI5Version": "1.60.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {"cozy": true, "compact": true},
+        "resources": {
+            "css": [{"uri": "style/mystyle.css"}]
+        },
+        "rootView": {
+            "viewName": "tcs.hr.hire.view.App",
+            "id": "idAppView",
+            "type":"XML"
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewPath": "tcs.hr.hire.view",
+                "viewType": "XML",
+                "controlId": "idAppCon",
+                "clearTarget": true
+            },
+            "routes": [{
+                "pattern": "",
+                "name":"home",
+                "target": ["biden","joe"]
+            },{
+                "pattern": "pacman/{contra}",
+                "name":"detail",
+                "target": ["joe","modi"]
+            },{
+                "pattern": "NewProduct",
+                "name":"add",
+                "target": ["joe","putin"]
+            }],
+            "targets": {
+                "joe": {
+                    "viewName": "View1",
+                    "id":"idV1",
+                    "controlAggregation": "masterPages"
+                },
+                "biden":{
+                    "viewName": "Empty",
+                    "id": "idEmpty",
+                    "controlAggregation": "detailPages"
+                },
+                "modi": {
+                    "viewName": "View2",
+                    "id":"idV2",
+                    "controlAggregation": "detailPages"
+                },
+                "putin": {
+                    "viewName": "AddProduct",
+                    "id":"idAdd",
+                    "controlAggregation": "detailPages"
+                }
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            },
+            "":{
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "anubhavService",
+                "preload": "true"
+            },
+            "local": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/mockdata/fruits.json",
+                "settings": {
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" 
+    controllerName="tcs.hr.hire.controller.View1">
+    <Page title="View 1">
+        <headerContent>
+            <Button icon="sap-icon://action" press="onNext" />
+        </headerContent>
+        <SearchField id='idSearch' search="onSearch"/>
+        <List id="idList" selectionChange="onItemSelection" mode="SingleSelectMaster" delete="onDelete2" items="{
+            path : '/ProductSet'
+        }" growing="true" growingThreshold="10">
+            <!-- <headerToolbar>
+                <Toolbar>
+                    <Button icon="sap-icon://delete" tooltip="Print/Delete Items" press="onDelete"></Button>
+                </Toolbar>
+            </headerToolbar> -->
+            <items>
+
+                <ObjectListItem intro="{NAME}-{CATEGORY}" title="{PRODUCT_ID}"
+                number="{PRICE}" numberUnit="{CURRENCY_CODE}" 
+                icon="sap-icon://product">
+                    <!-- <firstStatus>
+                        <ObjectStatus state="{
+                            path: 'availability',
+                            formatter: '.formatter.getStatusCode'
+                        }" text="{
+                            path : 'availability',
+                            formatter: '.getStatus'
+                        }"></ObjectStatus>
+                    </firstStatus> -->
+                </ObjectListItem>
+
+                <!-- <DisplayListItem label="Apple" value="Best Anti-biotic"></DisplayListItem>
+                <StandardListItem title="Banana" description="Good source of potassium"
+                icon="https://cdn.mos.cms.futurecdn.net/42E9as7NaTaAi4A6JcuFwG-1200-80.jpg"></StandardListItem>
+                <ObjectListItem title="Mango" intro="Purifies the blood"
+                number="250 INR" numberUnit="per Kg." icon="https://lh3.googleusercontent.com/proxy/P3qFbXZpDFrz4PsvUxkCOLsIhJpeu6_tQX4sWgMEhaFL2-LOIAfBJddm1DMKdpzgW7FSosYSa3usSvagr0BHJhAokWigdHNluEH3BC56-JEDx10bMLXFMrAMUNjxdBB9NW0wS3IB">
+                    <attributes>
+                        <ObjectAttribute title="Color" text="Reddish Yellow"></ObjectAttribute>
+                        <ObjectAttribute title="Season" text="Summer"></ObjectAttribute>
+                    </attributes>
+                    <firstStatus>
+                        <ObjectStatus state="Success" text="Available"></ObjectStatus>
+                    </firstStatus>
+                </ObjectListItem>
+                <InputListItem>
+                   <content>
+                     <HBox>
+                        <Label text="Pineapple"></Label>
+                        <Input width="20%" />
+                     </HBox>
+                   </content>
+                </InputListItem>
+                <CustomListItem>
+                    <HBox>
+                        <Text text="Do you want CoD" />
+                        <Switch />
+                    </HBox>
+                </CustomListItem>
+                <FeedListItem text="Hey Anubhav! how you doing gotta vaccine?" 
+                    icon="https://yt3.ggpht.com/ytc/AKedOLRL4TDvw0IOANXtLLO4_aw-gWZRE_i_ATWZq7FZniM=s900-c-k-c0x00ffffff-no-rj" sender="Narendra Modi"
+                    timestamp="Mon, 19th July"
+                ></FeedListItem>
+                <ActionListItem text="Order Now!!" press="onOrder"></ActionListItem> -->
+            </items>
+        </List>
+
+        <!-- <Button text="go to Next" press="onNext" /> -->
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button icon="sap-icon://delete" tooltip="Print/Delete Items" press="onDelete"></Button>
+                <Button press="onAdd" icon="sap-icon://add" tooltip="Add new product" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

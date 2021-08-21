@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Table id="mobileTable" items="{/supplier}">
+        <headerToolbar>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button icon="sap-icon://filter" tooltip="Filter" press="onFilter"></Button>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="Name" />
+            </Column>
+            <Column>
+                <Text text="City" />
+            </Column>
+            <Column minScreenWidth="Tablet">
+                <Text text="Since When" />
+            </Column>
+            <Column demandPopin="true" minScreenWidth="Tablet">
+                <Text text="Contact No" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{name}" />
+                    <Input value="{city}" showValueHelp="true" valueHelpRequest="onF4"/>
+                    <Text text="{sinceWhen}" />
+                    <Text text="{contactNo}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>
